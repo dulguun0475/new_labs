@@ -32,6 +32,9 @@ body {
   background-color: #F61067;
   color: white;
 }
+.learn p{
+  justify-content: center;
+}
 .all {
   display: flex;
   gap: 3%;
