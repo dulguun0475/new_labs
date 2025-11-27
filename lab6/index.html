@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>Rigorer Basketball Sneakers - Official Online Store</title>
     <meta name="description" content="Shop Rigorer basketball sneakers, apparel, and accessories. Best prices, fast delivery, and exclusive collections.">
     <meta name="keywords" content="basketball shoes, Rigorer sneakers, basketball apparel, sports accessories">
-    <title>Rigorer Basketball Sneakers - Official Online Store</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -42,21 +43,6 @@
         &#8594;
         </span>
     </section>
-    <script>
-        const images = ["33.png", "22.png", "11.png"];
-        let currentIndex = 0;
-        const img = document.getElementById("slider-image");
-
-        document.getElementById("prev").onclick = () => {
-            currentIndex = (currentIndex - 1 + images.length) % images.length;
-            img.src = images[currentIndex];
-        }
-
-        document.getElementById("next").onclick = () => {
-            currentIndex = (currentIndex + 1) % images.length;
-            img.src = images[currentIndex];
-        }
-    </script>
     <div class="tom">
         <h1>BASKETBALL SNEAKERS</h1>
         <div class="puuz">
@@ -83,23 +69,36 @@ $100.00 – $999,999.00</p>
         </div>
     </div>
     <script>
-    const products = document.querySelectorAll('.diva');
+        const images = ["33.png", "22.png", "11.png"];
+        let currentIndex = 0;
+        const img = document.getElementById("slider-image");
 
-    products.forEach(diva => {
-        const img = diva.querySelector('img[data-hover]'); 
-        if (!img) return; 
+        document.getElementById("prev").onclick = () => {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            img.src = images[currentIndex];
+        }
 
-        const originalSrc = img.src;
-        const hoverSrc = img.dataset.hover;
+        document.getElementById("next").onclick = () => {
+            currentIndex = (currentIndex + 1) % images.length;
+            img.src = images[currentIndex];
+        }
+        const products = document.querySelectorAll('.diva');
 
-        diva.addEventListener('mouseenter', () => {
+        products.forEach(diva => {
+            const img = diva.querySelector('img[data-hover]'); 
+            if (!img) return; 
+
+            const originalSrc = img.src;
+            const hoverSrc = img.dataset.hover;
+
+            diva.addEventListener('mouseenter', () => {
             img.src = hoverSrc; 
-        });
+            });
 
-        diva.addEventListener('mouseleave', () => {
+            diva.addEventListener('mouseleave', () => {
             img.src = originalSrc;
+            });
         });
-    });
     </script>
     <img src="sms.png" alt="smslogo" loading="lazy" class="msg" alt="Message Icon">
 </body>
