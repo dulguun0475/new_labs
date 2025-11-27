@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: white;
+    color: black;
+}
+.har{
+    background-color: #000;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.har p{
+    font-size: 12px;
+    color: #fff;
+}
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 10px;
+    background: #fff;
+    color: #000;
+}
+.menu a {
+    margin: 0 20px;
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+}
+.logo{
+    margin-left: 13px;
+}
+.icon-img{
+    margin-right: -40px;
+}
+.tom{
+    padding: 40px 120px;
+}
+.tom p{
+    margin-top: 8px;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+.diva p{
+    font-size: 10px;
+}
+.divb p{
+    font-size: 10px;
+}
+.divc p{
+    font-size: 10px;
+}
+.divd p{
+    font-size: 10px;
+}
+.puuz{
+    display: flex;          
+    justify-content: space-between;  
+    flex-wrap: wrap; 
+    gap: 10px;
+}
+.puuz .aimg {
+    width: 100%; 
+    height: auto;
+}
+.puuz .bimg {
+    width: 100%; 
+    height: auto;
+}
+.diva{
+    width: 24%;
+    text-align: center;
+    overflow: hidden;
+}
+.diva .aimg {
+    width: 100%;
+    height: auto;
+    transition: transform 2s ease;
+}
+.diva:hover .aimg {
+    transform: scale(1.1);
+}
+.diva .bimg {
+    width: 100%;
+    height: auto;
+    transition: transform 2s ease;
+}
+.diva:hover .bimg {
+    transform: scale(1.1);
+}
+.msg {
+    position: fixed;  
+    bottom: 20px;     
+    right: 20px;     
+    width: 50px;
+    height: auto;
+    cursor: pointer;
+    z-index: 1000;  
+}   
