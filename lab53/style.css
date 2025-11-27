@@ -25,12 +25,15 @@ body {
 }
 .learn {
   margin-top: 3%;
-  width: 12%;
+  width: 10%;
   height: auto;
   padding: 0.5% 2%;
   font-size: 1em;
   background-color: #F61067;
   color: white;
+}
+.learn p{
+  justify-content: center;
 }
 .all {
   display: flex;
