@@ -93,6 +93,12 @@ body {
     cursor: pointer;
     z-index: 1000;  
 }   
+.haha p{
+    color:#fff;
+}
+.haha h1{
+    color: #fff;
+}
 .navbar {
     position: fixed; 
     top: 0;
