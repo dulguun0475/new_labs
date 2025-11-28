@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>palindrome</title>
+    <script type="text/javascript">
+        document.write("<h2>1-р бодлого</h2>");
+        var too=window.prompt("1. Шалгах тоо оруул:");
+        var n=parseInt(too);
+        var a=n;
+        var s=0;
+        var x;
+        while(n>0){
+            var y=n%10;
+            s=s+y;
+            n=Math.floor(n/10);
+        }
+        var org=s;
+        var oot=0;
+        while(s>0){
+            var x=s%10;
+            oot=oot*10+x;
+            s=Math.floor(s/10);
+        }
+        document.writeln("<p>Оруулсан тоо: " + a + "</p>");
+        document.write("<p>Цифрүүдийн нийлбэр: " + org + "</p>");
+        if (org===oot) {
+            document.writeln("<p> Энэ тоо палиндром байна.</p>");
+        } else {
+            document.writeln("<p> Энэ тоо палиндром биш.</p>");
+        }
+
+        document.write("<h2>2-р бодлого</h2>");
+        var s=parseFloat(prompt("2. Чоно туулай 2-ын хоорондох зайг оруул:"));
+        var k=s;
+        var cho=25;
+        var tuu=18;
+        var d=cho-tuu;//zuruu hurd
+        var t=s/d;
+        var Sec=Math.round(t*3600);//sec bolgoh
+        var min=Math.floor(Sec/60);
+        var sec=Sec%60;// sec-ig min bolgoh
+        document.writeln("<p>Чоно туулай 2-ын хоорондох зай: " + k + "</p>");
+        document.write("Гүйцэх хугацаа: " + min + " минут " + sec + " секунд<br>");
+
+        document.write("<h2>3-р бодлого</h2>");
+        var toot=parseInt(prompt("3. Тоот оруул:"));
+        var davhars=9;
+        var ortss=3;
+        var ails=4;
+        var ortstutam=davhars*ails;
+        var aliorts=Math.floor((toot-1)/ortstutam)+1;
+        var index=(toot-1)%ortstutam;
+        var davhar=Math.floor(index/ails)+1;
+        var door=(index%ails)+1;
+        document.write(toot + " тоот нь " + aliorts + "-р орц, " + davhar + "-р давхар, " + door + "-р хаалганд байна.");
+
+        document.write("<h2>4-р бодлого</h2>");
+        var a=[];
+        for (var i=0;i<5;i++) {
+            a[i] = parseInt(prompt("4. " +(i + 1) + "-р тоог оруул:"));
+        }
+        var b=a[0];
+        for (var i=1;i<5;i++) {
+            var x=b;
+            var y=a[i];
+            var tempX = x, tempY = y;
+            while(tempY != 0){
+                var t = tempX % tempY;//uldegdel
+                tempX = tempY;
+                tempY = t;
+            }
+            var gcd = tempX;
+            b=Math.abs(x * y) / gcd;
+        }
+        document.write("5 тооны хамгийн бага хуваагдагч = " + b);
+
+        document.write("<h2>5-р бодлого</h2>");
+        var now = new Date();
+        var hours = now.getHours();
+        var ampm = (hours < 12) ? "AM" : "PM";
+        var x = parseFloat(prompt("5. Тоог оруул:"));
+        if (ampm === "AM") {
+            var result = x * x;
+            document.write("Цаг: " + hours + " (AM)<br>");
+            document.write("Өглөө (AM): " + x + "² = " + result + "<br>");
+        } else {
+            document.write("Цаг: " + hours + " (PM)<br>");
+            if (x < 0) {
+                document.write("Орой (PM): Сөрөг тоонд квадрат язгуур бодит биш.<br>");
+            } else {
+                var result = Math.sqrt(x);
+                document.write("√" + x + " = " + result + "<br>");
+            }
+        }
+    </script>
+</head>
+<body></body>
+</html>
