@@ -85,12 +85,11 @@ body {
     transform: scale(1.1);
 }
 .msg {
-    position: fixed;  
+    position: fixed; 
     bottom: 20px;     
     right: 20px;     
     width: 50px;
     height: auto;
-    cursor: pointer;
     z-index: 1000;  
 }   
 .haha p{

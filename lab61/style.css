@@ -1,90 +1,192 @@
-/* Body reset */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+} 
+body 
+{ 
+    font-family: Arial, sans-serif; 
+    background: white; 
+    color: black; 
+} 
+.navbar { 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 8px 10px; 
+    background: #fff; 
+    color: #000; 
+} 
+.menu a { 
+    margin: 0 20px; 
+    text-decoration: none; 
+    color: #000; 
+    font-size: 14px; 
+} 
+.logo{ 
+    margin-left: 13px; 
+} 
+.icon-img{ 
+    margin-right: -40px; 
+} 
+.tom{ 
+    padding: 40px 120px; 
+} 
+.tom h1{ 
+    margin-top: 8px; 
+    margin-bottom: 20px; 
+    font-size: 20px; 
+} 
+.jerry h1{ 
+    margin-top: 25px; 
+    margin-bottom: 20px; 
+    font-size: 20px; 
+} 
+.socks h1{ 
+    margin-top: 29px; 
+    margin-bottom: 20px; 
+    font-size: 20px; 
+} 
+.n h1{ 
+    margin-top: 29px; 
+    margin-bottom: 20px; 
+    font-size: 20px; 
+} 
+.k h1{ 
+    margin-top: 29px; 
+    margin-bottom: 20px; 
+    font-size: 20px; 
+} 
+.sch h1{ 
+    margin-top: 29px; 
+    margin-bottom: 20px; 
+    font-size: 20px; 
+} 
+.col h1{ 
+    margin-top: 25px; 
+    margin-bottom: 20px; 
+    font-size: 20px; 
+} 
+.sld h1{ 
+    margin-top: 25px; 
+    margin-bottom: 20px; 
+    font-size: 20px; 
+} 
+.diva p{ 
+    font-size: 10px; 
+} 
+.divb p{
+    font-size: 10px; 
+} 
+.divc p{ 
+    font-size: 10px;
+} 
+.divd p{ 
+    font-size: 10px; 
+} 
+.puuz{ 
+    display: flex; 
+    justify-content: space-between; 
+    flex-wrap: wrap; 
+    gap: 10px; 
+} 
+.puuz .aimg { 
+    width: 100%; 
+    height: auto; 
+} 
+.puuz .bimg { 
+    width: 100%; 
+    height: auto; 
+} 
+.diva{ 
+    width: 24%; 
+    text-align: center; 
+    overflow: hidden; 
+} 
+.diva .aimg { 
+    width: 100%; 
+    height: auto; 
+    transition: transform 2s ease;
+} 
+.diva:hover .aimg 
+{ 
+    transform: scale(1.1); 
+} 
+.diva .bimg { 
+    width: 100%; 
+    height: auto; 
+    transition: transform 2s ease; 
+} 
+.diva:hover .bimg { 
+    transform: scale(1.1); 
+} 
+.msg { 
+    position: fixed; 
+    bottom: 20px; 
+    right: 20px; 
+    width: 50px; 
+    height: auto; 
+    cursor: pointer; 
+    z-index: 1000; 
+} 
+.navbar { 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; /* дэлгэцийн өргөнтэй адил */ 
+    background-color: white; 
+    z-index: 1000; 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 10px 20px; 
+} 
+body { 
+    margin-top: 100px; /* header-ийн өндөртэй тэнцэх зай нэмэх, контентыг халж орохгүй байх */ 
+} 
+@media(max-width: 768px){ 
+    .puuz { 
+        flex-direction: column; 
+        align-items: center; 
+    } 
+    .diva { 
+        width: 80%; 
+        margin-bottom: 20px; 
+    } 
+    .menu { 
+        display: flex; 
+        flex-wrap: wrap; 
+        justify-content: center; 
+    } 
+}
+.six-row {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 6 багана */
+    gap: 15px;
+    padding: 20px 0;
 }
 
-/* Message icon fixed */
-.msg {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    width: 50px;
-    height: auto;
-    z-index: 1000;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-.msg:hover { transform: scale(1.2); }
-
-/* Navbar sticky */
-.navbar {
-    position: sticky;
-    top: 0;
-    background: white;
-    z-index: 900;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-.navbar img { display: block; }
-
-/* Menu links */
-.menu a {
-    margin: 0 10px;
-    text-decoration: none;
-    color: black;
+.item {
+    text-align: center; /* текст төвд */
 }
 
-/* Slider section */
-.adv {
-    position: relative;
-    max-width: 100%;
-    overflow: hidden;
-}
-.adv img {
+.item img {
     width: 100%;
     height: auto;
-    transition: transform 0.3s ease;
+    object-fit: contain;
 }
-.adv img:hover { transform: scale(1.05); }
 
-.arrow {
-    position: absolute;
-    top: 50%;
-    font-size: 40px;
-    color: white;
-    cursor: pointer;
-    user-select: none;
-    transform: translateY(-50%);
+.item p {
+    font-size: 10px;
+    margin-top: 8px;
+    color: #333;
 }
-#prev { left: 10px; }
-#next { right: 10px; }
+.jer{
+    margin-top: 80px;
+}
+.saaral{
+    margin-top: 80px;
+}
 
-/* Products */
-.tom { padding: 20px; }
-.puuz {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-.diva {
-    width: 24%;
-    margin-bottom: 20px;
-    text-align: center;
-}
-.diva img {
-    width: 100%;
-    height: auto;
-    transition: transform 0.3s ease;
-}
-.diva img:hover { transform: scale(1.05); }
 
-/* Responsive */
-@media(max-width: 768px){
-    .puuz { flex-direction: column; align-items: center; }
-    .diva { width: 80%; margin-bottom: 20px; }
-    .menu { display: flex; flex-wrap: wrap; justify-content: center; }
-}
+
