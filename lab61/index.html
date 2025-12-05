@@ -136,7 +136,7 @@
     <img src="foot.png" width=100% height="auto" class="footer">
 </div>
 <script> 
-    const images = ["33.png", "22.png", "11.png"]; let currentIndex = 0; const img = document.getElementById("slider-image"); document.getElementById("prev").onclick = () => { currentIndex = (currentIndex - 1 + images.length) % images.length; img.src = images[currentIndex]; } 
+    const images = ["pink.png", "33.png", "11.png"]; let currentIndex = 0; const img = document.getElementById("slider-image"); document.getElementById("prev").onclick = () => { currentIndex = (currentIndex - 1 + images.length) % images.length; img.src = images[currentIndex]; } 
     document.getElementById("next").onclick = () => { currentIndex = (currentIndex + 1) % images.length; img.src = images[currentIndex]; } 
     const products = document.querySelectorAll('.diva'); products.forEach(diva => { const img = diva.querySelector('img[data-hover]'); if (!img) return; const originalSrc = img.src; const hoverSrc = img.dataset.hover; diva.addEventListener('mouseenter', () => { img.src = hoverSrc; }); diva.addEventListener('mouseleave', () => { img.src = originalSrc; }); }); 
 </script> 

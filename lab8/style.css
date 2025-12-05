@@ -1,0 +1,18 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #f4f4f4;
+}
+
+#letters button {
+    margin: 5px;
+    padding: 10px 15px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+#word {
+    font-size: 32px;
+    letter-spacing: 10px;
+    margin: 20px;
+}
