@@ -1,18 +1,58 @@
 body {
     font-family: Arial, sans-serif;
-    text-align: center;
-    background: #f4f4f4;
+    background: greenyellow;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
 }
 
+/* НЭГ background-тай том блок */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 1000px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.3); /* тунгалаг цагаан (optional) */
+    border-radius: 20px;
+}
+
+/* Баруун / зүүн талд background өгөхгүй */
+.left, .right {
+    background: none;
+    box-shadow: none;
+}
+
+/* Зүүн талын зай */
+.left {
+    width: 600px;
+}
+
+/* Баруун талын зураг */
+.right {
+    width: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#hangmanImg {
+    width: 300px;
+    height: auto;
+}
+
+/* Үсгийн товч */
 #letters button {
     margin: 5px;
-    padding: 10px 15px;
-    font-size: 18px;
+    padding: 8px 12px;
+    font-size: 16px;
     cursor: pointer;
 }
 
+/* Үг харуулах */
 #word {
     font-size: 32px;
     letter-spacing: 10px;
-    margin: 20px;
+    margin: 20px 0;
 }
+

@@ -1,10 +1,11 @@
-var questions = ['Biggest Mammal?', 'Fastest vehicle?'];
-var answers   = ['WHALE', 'JET'];
+var questions = ['Гринч ямар өнгөтэй вэ?', 'Гринч ямар амьтан тэжээдэг вэ?', 'Сантагийн хэлдэг хамгийн алдартай үг?', 'Улаан хамартай бугыг хэн гэдэг вэ?', 'Цасан хүнийг юугаар хийдэг вэ?'];
+var answers   = ['НОГООН', 'НОХОЙ', 'ХОХОХО', 'РУДОЛЬФ', 'ЦАС'];
 
 let chosenIndex;
 let chosenAnswer = "";
 let displayedWord = [];
 let wrongGuesses = 0;
+let letterIndexes = {};
 
 const questionEl = document.getElementById("question");
 const wordEl = document.getElementById("word");
@@ -16,9 +17,7 @@ startBtn.onclick = startGame;
 
 function startGame() {
     wrongGuesses = 0;
-    hangmanImg.src = "hang0.png";
-
-    // random сонгох
+    hangmanImg.src = "images/hang0.png";
     chosenIndex = Math.floor(Math.random() * questions.length);
     chosenAnswer = answers[chosenIndex].toUpperCase();
 
@@ -26,48 +25,68 @@ function startGame() {
 
     displayedWord = Array(chosenAnswer.length).fill("_");
     wordEl.innerText = displayedWord.join(" ");
+    letterIndexes = {};
 
     createLetterButtons();
 }
 
 function createLetterButtons() {
     lettersEl.innerHTML = "";
-
-    const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const alphabet = "АБВГДЕЁЖЗИЙКЛМНОӨПРСТУФХЦЧШЩЪЫЬЭЮЯ";
 
     for (let char of alphabet) {
         let btn = document.createElement("button");
         btn.innerText = char;
 
         btn.onclick = function () {
-            checkLetter(char, btn);
+            checkLetter(char);
         };
 
         lettersEl.appendChild(btn);
     }
 }
 
-function checkLetter(letter, btn) {
-    btn.disabled = true;
-
-    if (chosenAnswer.includes(letter)) {
+function checkLetter(letter) {
+    if (!letterIndexes[letter]) {
+        letterIndexes[letter] = [];
         for (let i = 0; i < chosenAnswer.length; i++) {
             if (chosenAnswer[i] === letter) {
-                displayedWord[i] = letter;
+                letterIndexes[letter].push(i);
             }
         }
-        wordEl.innerText = displayedWord.join(" ");
+    }
 
-        if (!displayedWord.includes("_")) {
-            alert("🎉 You Win!");
+    let indexes = letterIndexes[letter];
+    let added = false;
+
+    for (let i = 0; i < indexes.length; i++) {
+        let idx = indexes[i];
+        if (displayedWord[idx] === "_") {
+            displayedWord[idx] = letter;
+            added = true;
+            break;
         }
-    } 
-    else {
+    }
+
+    wordEl.innerText = displayedWord.join(" ");
+    if (!displayedWord.includes("_")) {
+        alert("🎉 Та зөв хариуллаа! Зөв хариулт: " + chosenAnswer);
+        nextQuestion();
+    }
+    if (!added) {
         wrongGuesses++;
-        hangmanImg.src = "hang" + wrongGuesses + ".png";
+        hangmanImg.src = "images/hang" + wrongGuesses + ".png";
 
         if (wrongGuesses === 6) {
-            alert("☠ Game Over! Correct answer: " + chosenAnswer);
+            alert("☠ Тоглоом дууслаа! Зөв хариулт: " + chosenAnswer);
         }
     }
 }
+function nextQuestion() {
+    startGame();
+}
+
+
+
+
+
