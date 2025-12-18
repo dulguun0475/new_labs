@@ -1,6 +1,19 @@
-var questions = ['Гринч ямар өнгөтэй вэ?', 'Гринч ямар амьтан тэжээдэг вэ?', 'Сантагийн хэлдэг хамгийн алдартай үг?', 'Улаан хамартай бугыг хэн гэдэг вэ?', 'Цасан хүнийг юугаар хийдэг вэ?'];
-var answers   = ['НОГООН', 'НОХОЙ', 'ХОХОХО', 'РУДОЛЬФ', 'ЦАС'];
-
+var questions = [
+    'Гринч ямар өнгөтэй вэ?',
+    'Гринч ямар амьтан тэжээдэг вэ?',
+    'Сантагийн хэлдэг хамгийн алдартай үг?',
+    'Улаан хамартай бугыг хэн гэдэг вэ?',
+    'Цасан хүнийг юугаар хийдэг вэ?'
+];
+var answers = [
+    'НОГООН',
+    'НОХОЙ',
+    'ХОХОХО',
+    'РУДОЛЬФ',
+    'ЦАС'
+];
+let remainingQuestions = [];
+let remainingAnswers = [];
 let chosenIndex;
 let chosenAnswer = "";
 let displayedWord = [];
@@ -12,40 +25,40 @@ const wordEl = document.getElementById("word");
 const lettersEl = document.getElementById("letters");
 const hangmanImg = document.getElementById("hangmanImg");
 const startBtn = document.getElementById("startBtn");
-
-startBtn.onclick = startGame;
-
+startBtn.onclick = function () {
+    remainingQuestions = [...questions];
+    remainingAnswers = [...answers];
+    startGame();
+};
 function startGame() {
+    if (remainingQuestions.length === 0) {
+        alert("Бүх асуулт дууслаа 🎉");
+        return;
+    }
     wrongGuesses = 0;
     hangmanImg.src = "images/hang0.png";
-    chosenIndex = Math.floor(Math.random() * questions.length);
-    chosenAnswer = answers[chosenIndex].toUpperCase();
-
-    questionEl.innerText = questions[chosenIndex];
-
+    chosenIndex = Math.floor(Math.random() * remainingQuestions.length);
+    chosenAnswer = remainingAnswers[chosenIndex].toUpperCase();
+    questionEl.innerText = remainingQuestions[chosenIndex];
     displayedWord = Array(chosenAnswer.length).fill("_");
     wordEl.innerText = displayedWord.join(" ");
     letterIndexes = {};
-
+    remainingQuestions.splice(chosenIndex, 1);
+    remainingAnswers.splice(chosenIndex, 1);
     createLetterButtons();
 }
-
 function createLetterButtons() {
     lettersEl.innerHTML = "";
     const alphabet = "АБВГДЕЁЖЗИЙКЛМНОӨПРСТУФХЦЧШЩЪЫЬЭЮЯ";
-
     for (let char of alphabet) {
         let btn = document.createElement("button");
         btn.innerText = char;
-
         btn.onclick = function () {
             checkLetter(char);
         };
-
         lettersEl.appendChild(btn);
     }
 }
-
 function checkLetter(letter) {
     if (!letterIndexes[letter]) {
         letterIndexes[letter] = [];
@@ -55,10 +68,8 @@ function checkLetter(letter) {
             }
         }
     }
-
     let indexes = letterIndexes[letter];
     let added = false;
-
     for (let i = 0; i < indexes.length; i++) {
         let idx = indexes[i];
         if (displayedWord[idx] === "_") {
@@ -67,25 +78,27 @@ function checkLetter(letter) {
             break;
         }
     }
-
     wordEl.innerText = displayedWord.join(" ");
     if (!displayedWord.includes("_")) {
-        alert("🎉 Та зөв хариуллаа! Зөв хариулт: " + chosenAnswer);
-        nextQuestion();
+        wordEl.innerText = displayedWord.join(" ");
+        setTimeout(() => {
+            alert("Та зөв хариулж түүнийг аварлаа! Зөв хариулт: " + chosenAnswer);
+            startGame();
+        }, 150);
+
+        return;
     }
     if (!added) {
         wrongGuesses++;
         hangmanImg.src = "images/hang" + wrongGuesses + ".png";
-
         if (wrongGuesses === 6) {
-            alert("☠ Тоглоом дууслаа! Зөв хариулт: " + chosenAnswer);
+            setTimeout(() => {
+                alert("Та Гринчийг дүүжилж, тоглоом дууслаа! Зөв хариулт: " + chosenAnswer);
+                startGame();
+            }, 150);
         }
     }
 }
-function nextQuestion() {
-    startGame();
-}
-
 
 
 

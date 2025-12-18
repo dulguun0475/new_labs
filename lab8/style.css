@@ -5,54 +5,111 @@ body {
     justify-content: center;
     margin-top: 30px;
 }
-
-/* НЭГ background-тай том блок */
 .container {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     width: 1000px;
     padding: 20px;
-    background: rgba(255, 255, 255, 0.3); /* тунгалаг цагаан (optional) */
+    background: rgba(255, 255, 255, 0.3);
     border-radius: 20px;
+    margin-top: 50px;
 }
-
-/* Баруун / зүүн талд background өгөхгүй */
 .left, .right {
     background: none;
     box-shadow: none;
 }
-
-/* Зүүн талын зай */
 .left {
     width: 600px;
 }
-
-/* Баруун талын зураг */
+.left h1{
+    justify-content: center;
+}
 .right {
     width: 350px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
 #hangmanImg {
     width: 300px;
     height: auto;
 }
-
-/* Үсгийн товч */
 #letters button {
     margin: 5px;
     padding: 8px 12px;
     font-size: 16px;
     cursor: pointer;
 }
-
-/* Үг харуулах */
 #word {
     font-size: 32px;
     letter-spacing: 10px;
     margin: 20px 0;
 }
+#word {
+    display: flex;
+    justify-content: center;
+    gap: 16px;         
+    font-size: 32px;
+    margin: 20px 0;
+}
+#title {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+#letters button {
+    margin: 5px;
+    padding: 8px 12px;
+    font-size: 16px;
+    cursor: pointer;
+
+    background: #ffffff;
+    border: 2px solid #2e7d32;  
+    border-radius: 8px;
+    color: #2e7d32;
+}
+
+#letters button:hover {
+    background: #2e7d32;
+    color: #ffffff;
+}
+#word {
+    display: flex;
+    justify-content: center;
+    gap: 16px;         
+    font-size: 32px;
+    margin: 20px 0;
+}
+#startBtn{
+    text-align: center;
+    width: auto;
+    margin-bottom: 20px;
+}
+#startBtn {
+    display: block;          
+    margin: 15px auto 0 auto; 
+    padding: 10px 20px;
+    font-size: 15px;
+    border: 1px solid #2e7d32; 
+    border-radius: 5px;
+    background: #ffffff;
+    color: #2e7d32;
+}
+
+#startBtn:hover {
+    background: #2e7d32;
+    color: #ffffff;
+}
+#question {
+    text-align: center;
+    width: auto;
+    margin-bottom: 20px;
+}
+#letters {
+    text-align: center;
+    width: auto;
+    margin-bottom: 20px;
+}
+
 
