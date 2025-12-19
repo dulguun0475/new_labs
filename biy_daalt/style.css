@@ -1,0 +1,86 @@
+.body{
+    background-image: url("img/bg1.jpg");
+  background-size: cover;       
+  background-repeat: no-repeat;
+  background-position: center;
+} 
+.navuseg {
+  background-image: url("img/bg.png");
+  background-size: cover;       
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.navi-img {
+  width: 120px;      
+  height: auto;        
+}
+.deedidiv h1{
+    text-align: center;
+    font-size: 70px;
+    color: rgb(78, 51, 15);
+}
+.navuseg {
+  position: fixed;      
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  padding: 5px 10px;
+  display: flex;
+  flex-wrap: wrap;   
+  justify-content: center;
+  gap: 6px;
+}
+.nav-img {
+  width: 40px;   
+  height: auto;
+}
+body {
+  padding-top: 110px; 
+}
+.bodya h1{
+    text-align: center;
+    font-size: 70px;
+}
+.row {
+  display: flex;              
+  align-items: flex-start;   
+  gap: 40px;                  
+}
+
+.apple-img {
+  width: 250px;   
+}
+
+.text-block {
+  display: flex;
+  flex-direction: column; 
+}
+
+.useg {
+  font-size: 55px;
+  font-weight: bold;
+}
+
+.text {
+  font-size: 40px;
+  line-height: 1.5;
+  max-width: 700px;  
+}
+.ulger {
+     width: 70%;
+     background-color: #fae6f9;
+     border: 2px solid #191b19;
+     border-radius: 20px;
+     padding: 20px;
+     margin-bottom: 50px;
+        }
+.nuur {
+     width: 70%;
+     background-color: #fae6f9;
+     border: 2px solid #191b19;
+     border-radius: 20px;
+     padding: 20px;
+     margin-bottom: 50px;
+}
+

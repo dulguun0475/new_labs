@@ -3,14 +3,16 @@ var questions = [
     'Гринч ямар амьтан тэжээдэг вэ?',
     'Сантагийн хэлдэг хамгийн алдартай үг?',
     'Улаан хамартай бугыг хэн гэдэг вэ?',
-    'Цасан хүнийг юугаар хийдэг вэ?'
+    'Цасан хүнийг юугаар хийдэг вэ?',
+    'Монгол улсын ерөнхийлөгч хэн бэ?'
 ];
 var answers = [
     'НОГООН',
     'НОХОЙ',
     'ХОХОХО',
     'РУДОЛЬФ',
-    'ЦАС'
+    'ЦАС',
+    'Хүрэлсүх'
 ];
 let remainingQuestions = [];
 let remainingAnswers = [];
@@ -91,9 +93,10 @@ function checkLetter(letter) {
     if (!added) {
         wrongGuesses++;
         hangmanImg.src = "images/hang" + wrongGuesses + ".png";
+
         if (wrongGuesses === 6) {
             setTimeout(() => {
-                alert("Та Гринчийг дүүжилж, тоглоом дууслаа! Зөв хариулт: " + chosenAnswer);
+                alert("Тоглоом дууслаа! Зөв хариулт: " + chosenAnswer);
                 startGame();
             }, 150);
         }
